@@ -1,0 +1,160 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* App Header */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Keyframe for logo spin animation */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styling for message items (the container of each message) */
+.message-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f2f5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 15px; /* Rounded border for the message container */
+  overflow: hidden; /* Keeps elements inside the rounded border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Hover effect to show a stronger shadow when hovering over a message */
+.message-item:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Message bubble styling (incoming and outgoing messages) */
+.message-bubble {
+  background-color: #daf0ff; /* Light blue background for outgoing messages */
+  padding: 12px 15px;
+  border-radius: 15px; /* Rounded edges for the message bubble */
+  max-width: 80%;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for bubble lift effect */
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Styling for incoming messages with light green background */
+.message-bubble.incoming {
+  background-color: #e1ffc7; /* Light green for incoming messages */
+}
+
+/* User avatar styling */
+.avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Shadow for avatar */
+}
+
+/* Styling for the conversation container (overall chat box) */
+.conversation-container {
+  display: flex;
+  flex-direction: column-reverse; /* Show the newest message at the bottom */
+  height: 80vh;
+  overflow-y: scroll;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #f5f5f5;
+}
+
+/* Styling for the app header */
+.messenger-headline {
+  font-family: 'Baloo 2', sans-serif; /* Balloon-like font */
+  font-size: 48px; /* Large font size */
+  color: #0078D4; /* Blue color for the headline */
+  text-align: center;
+  margin-top: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow for a 3D effect */
+}
+
+/* Styling for icons inside the message bubbles (camera + like button) */
+.message-bubble-icons {
+  display: flex;
+  justify-content: flex-end; /* Align icons to the right */
+  margin-top: 8px;
+}
+
+.message-bubble-icons img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for icons (camera + like button) */
+.message-bubble-icons img:hover {
+  transform: scale(1.1); /* Slight increase in size when hovered */
+}
+
+/* Modal or pop-up styling for clicked conversations (if you want to show detailed conversation) */
+.conversation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  visibility: hidden; /* Hidden by default */
+}
+
+.conversation-modal.open {
+  visibility: visible; /* Make it visible when opened */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade in effect for modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
